@@ -1,0 +1,54 @@
+-- Autre solution pour l'exo fonction
+
+
+hero = {}
+
+hero.vie = 100
+hero.vieMax = 100
+hero.mana = 100
+hero.dmg = 50 --puissance de frappe du hero
+
+
+boss = {}
+
+boss.vie = 1000
+boss.vieMax = 1000
+boss.mana = 1000
+boss.dmg = 10 --puissance de frappe du boss
+
+
+
+
+function Hit (personnage, ennemi) -- un personnage inflige des dmg a son ennemi
+  
+  personnage.vie = personnage.vie - ennemi.dmg
+
+end
+
+function Heal (personnage)
+  
+  personnage.vie = personnage.vieMax
+  
+end
+
+
+Hit (hero, boss) -- le hero s'est prit les degats du boss
+
+print("Vie hero apres un coup :", hero.vie)
+
+Hit (boss, hero) -- le boss s'est prit les degats du hero
+
+print ("Vie boss apres un coup :", boss.vie)
+
+
+Heal (hero)
+
+print ("Le Hero est full vie :", hero.vieMax)
+
+Heal (boss)
+
+print ("Le Boss est full vie :", boss.vieMax)
+
+
+
+
